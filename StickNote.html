@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Sticky Note</title>
+    <script src="angular.min.js">
+
+    </script>
+    <script src="StickyNote.js"></script>
+    <link rel="stylesheet" href="abc.css"/>
+</head>
+<body>
+<div ng-app="myApp">
+  <div ng-controller="addController">
+      <h1>Add you task here..</h1>
+      <textarea ng-model="message" cols="40" rows="10"></textarea>
+      <p ng-bind="message+count"></p>
+      <input type="button" value="Add Task" ng-click="onClick(message,data)"/>
+  </div>
+    <div ng-controller="showController">
+        <h1>Pending Task....</h1>
+    <ul>
+        <li ng-repeat="x in data">{{x.srNo+" : "+x.message+" : "+x.time+" : "}}<input id="button" type="button"  value="Delete" ng-click="delete(x)"/></li>
+    </ul>
+    </div>
+</div>
+</body>
+</html>
